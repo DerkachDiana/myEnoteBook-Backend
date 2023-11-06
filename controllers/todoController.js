@@ -1,7 +1,8 @@
+const checkAndThrowErrorIfParamNotPassed = require('../error/utils')
+const { todoLayoutId, todoId } = require('./constants')
 class TodoController {
-    async getTodoByLayoutId(req, res) {
-        const a = req.query.id;
-        res.json(a)
+    async getTodoByLayoutId(req, res, next) {
+    checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
     }
 
     async addTodo(req, res) {
@@ -11,12 +12,12 @@ class TodoController {
 
     }
 
-    async removeTodoById(req, res) {
-
+    async removeTodoById(req, res, next) {
+        checkAndThrowErrorIfParamNotPassed(req.query[todoId], next, todoId);
     }
 
-    async removeTodoByTodoLayoutId(req, res) {
-
+    async removeTodosByTodoLayoutId(req, res, next) {
+        checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
     }
 }
 

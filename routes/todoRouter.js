@@ -6,6 +6,6 @@ router.get('/getByTodoLayoutId', todoController.getTodoByLayoutId)
 router.put('/add', todoController.addTodo)
 router.put('/update', todoController.updateTodo)
 router.delete('/removeById', todoController.removeTodoById)
-router.delete('/removeByTodoLayoutId', todoController.removeTodoByTodoLayoutId)
+router.delete('/removeByTodoLayoutId', todoController.removeTodosByTodoLayoutId)
 
 module.exports = router

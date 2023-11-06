@@ -1,10 +1,13 @@
-class todoCategoryController {
-    async getTodoCategoriesByUserId(req, res) {
+const checkAndThrowErrorIfParamNotPassed = require('../error/utils')
+const { userId, categoryId } = require('./constants')
 
+class todoCategoryController {
+    async getTodoCategoriesByUserId(req, res, next) {
+        checkAndThrowErrorIfParamNotPassed(req.query[userId], next, userId);
     }
 
-    async getTodoCategoryByCategoryId(req, res) {
-
+    async getTodoCategoryByCategoryId(req, res, next) {
+        checkAndThrowErrorIfParamNotPassed(req.query[categoryId], next, categoryId);
     }
 
     async addTodoCategory(req, res) {
@@ -15,8 +18,8 @@ class todoCategoryController {
 
     }
 
-    async removeTodoCategoryById(req, res) {
-        
+    async removeTodoCategoryById(req, res, next) {
+        checkAndThrowErrorIfParamNotPassed(req.query[categoryId], next, categoryId);
     }
 }
 
