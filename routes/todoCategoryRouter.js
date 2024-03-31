@@ -2,10 +2,10 @@ const Router = require('express')
 const router = new Router()
 const todoCategoryController = require('../controllers/todoCategoryController');
 
-router.get('/:userId', todoCategoryController.getTodoCategoriesByUserId)
-router.get('/:todoCategoryId', todoCategoryController.getTodoCategoryByCategoryId)
+router.get('/getByUserId', todoCategoryController.getTodoCategoriesByUserId)
+router.get('/getByCategoryId', todoCategoryController.getTodoCategoryByCategoryId)
 router.put('/add', todoCategoryController.addTodoCategory)
 router.put('/update', todoCategoryController.updateTodoCategory)
-router.delete('/removeById/:categoryId', todoCategoryController.removeTodoCategoryById)
+router.delete('/removeById', todoCategoryController.removeTodoCategoryById)
 
 module.exports = router

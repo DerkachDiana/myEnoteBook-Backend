@@ -3,6 +3,8 @@ const todoLayoutId = 'todoLayoutId'
 const todoId = 'todoId'
 const categoryId = 'categoryId'
 const coverId = 'coverId'
+const todoLayout = 'todoLayout'
+const todoCategory = 'todoCategory'
 
 
 module.exports = {
@@ -11,4 +13,6 @@ module.exports = {
     todoId,
     categoryId,
     coverId,
+    todoLayout,
+    todoCategory,
 }

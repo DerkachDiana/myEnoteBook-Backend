@@ -10,7 +10,7 @@ const User = sequelize.define('user', {
 const Todo = sequelize.define('todo', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     text: { type: DataTypes.STRING },
-    isChecked: { type: DataTypes.BOOLEAN },
+    isChecked: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: false },
 });
 
 const TodoLayout = sequelize.define('todo-layout', {
@@ -21,6 +21,7 @@ const TodoLayout = sequelize.define('todo-layout', {
 const Cover = sequelize.define('cover', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     color: { type: DataTypes.STRING, unique: true },
+    name: { type: DataTypes.STRING, unique: true },
 });
 
 const TodoCategory = sequelize.define('todo_category', {

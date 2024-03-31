@@ -2,7 +2,7 @@ const Router = require('express')
 const router = new Router()
 const coverController = require('../controllers/coverController')
 
-router.get('/:coverId', coverController.getCoverById)
-router.get('/colorById/:coverId', coverController.getCoverColorByCoverId)
+router.get('/', coverController.getCoverById)
+router.get('/colorById', coverController.getCoverColorByCoverId)
 
 module.exports = router
