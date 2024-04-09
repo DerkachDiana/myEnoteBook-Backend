@@ -73,17 +73,22 @@ class todoLayoutController {
     }
 
     async addTodoLayout(req, res, next) {
-        console.log('addTodoLayout', req.body);
-        if (!Object.keys(req.body).length) {
-            checkAndThrowErrorIfParamNotPassed(req.body, next, CONSTANTS.todoLayout)
+        const todoLayout = {
+            ...req.body,
+            todoCategoryId: req.body.categoryId
+        }
+
+        console.log('addTodoLayout', todoLayout);
+        if (!Object.keys(todoLayout).length) {
+            checkAndThrowErrorIfParamNotPassed(todoLayout, next, CONSTANTS.todoLayout)
 
             return
         }
 
         try {
-            const todoLayout = await TodoLayout.create(req.body)
+            const todoLayoutCreatedStatus = await TodoLayout.create(todoLayout)
 
-            res.json(todoLayout)
+            res.json(todoLayoutCreatedStatus)
         } catch(e) {
             return next(ApiError.badRequest(`Can not create todoLayout ${e}`))
         }
