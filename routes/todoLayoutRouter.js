@@ -7,7 +7,7 @@ router.get('/getByUserId', todoLayoutController.getTodoLayoutsByUserId)
 router.get('/getByTodoLayoutId', todoLayoutController.getTodoLayoutById)
 router.put('/add', todoLayoutController.addTodoLayout)
 router.put('/update', todoLayoutController.updateTodoLayout)
-router.delete('/removeById/:todoLayoutId', todoLayoutController.removeTodoLayoutById)
+router.delete('/removeById', todoLayoutController.removeTodoLayoutById)
 router.delete('/removeByCategoryId', todoLayoutController.removeTodoLayoutsByCategoryId)
 
 module.exports = router

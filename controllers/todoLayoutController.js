@@ -96,7 +96,6 @@ class todoLayoutController {
     }
 
     async updateTodoLayout(req, res, next) {
-        console.log('updateTodoLayout', req.body);
         if (!Object.keys(req.body)) {
             checkAndThrowErrorIfParamNotPassed(req.body, next, CONSTANTS.todoLayout)
 
