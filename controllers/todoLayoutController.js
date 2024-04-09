@@ -15,13 +15,13 @@ class todoLayoutController {
         try {
             const todoLayouts = await TodoLayout.findAll({
                 where: {
-                    categoryId
+                    todoCategoryId: categoryId
                 }
             })
 
             res.json(todoLayouts)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not add todoLayout ${e}`))
+            return next(ApiError.badRequest(`Can not get todoLayout ${e}`))
         }
        
     }
