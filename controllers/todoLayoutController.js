@@ -78,7 +78,6 @@ class todoLayoutController {
             todoCategoryId: req.body.categoryId
         }
 
-        console.log('addTodoLayout', todoLayout);
         if (!Object.keys(todoLayout).length) {
             checkAndThrowErrorIfParamNotPassed(todoLayout, next, CONSTANTS.todoLayout)
 
@@ -117,7 +116,7 @@ class todoLayoutController {
     }
 
     async removeTodoLayoutById(req, res, next) {
-        const { id } = req.body;
+        const { id } = req.query;
 
         if (!id) {
             checkAndThrowErrorIfParamNotPassed(id, next, CONSTANTS.todoLayoutId)
