@@ -5,7 +5,8 @@ const ApiError = require('../error/ApiError')
 
 class todoLayoutController {
     async getTodoLayoutsByCategoryId(req, res, next) {
-        const categoryId = req.query[CONSTANTS.categoryId]
+        const { categoryId } = req.query;
+        console.log('this is category id', req.query);
         if (!categoryId) {
             checkAndThrowErrorIfParamNotPassed(categoryId, next, CONSTANTS.categoryId)
 
