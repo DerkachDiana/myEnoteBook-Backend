@@ -95,14 +95,19 @@ class todoLayoutController {
     }
 
     async updateTodoLayout(req, res, next) {
-        if (!Object.keys(req.body)) {
-            checkAndThrowErrorIfParamNotPassed(req.body, next, CONSTANTS.todoLayout)
+        console.log('req.body.categoryId = ', req.body.categoryId);
+        const updatedTodoLayout = {
+            ...req.body,
+            todoCategoryId: req.body.categoryId,
+        }
+        if (!Object.keys(updatedTodoLayout)) {
+            checkAndThrowErrorIfParamNotPassed(updatedTodoLayout, next, CONSTANTS.todoLayout)
 
             return;
         }
 
         try {
-            const todoLayoutUpdateStatus = await TodoLayout.update(req.body, {
+            const todoLayoutUpdateStatus = await TodoLayout.update(updatedTodoLayout, {
                 where: {
                     id: req.body.id,
                 }
