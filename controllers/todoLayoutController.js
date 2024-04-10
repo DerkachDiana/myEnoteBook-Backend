@@ -95,7 +95,6 @@ class todoLayoutController {
     }
 
     async updateTodoLayout(req, res, next) {
-        console.log('req.body.categoryId = ', req.body.categoryId);
         const updatedTodoLayout = {
             ...req.body,
             todoCategoryId: req.body.categoryId,

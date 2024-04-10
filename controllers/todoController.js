@@ -44,7 +44,7 @@ class TodoController {
         }
 
         try {
-            const todo = await Todo.update({ text: req.body.text }, {
+            const todo = await Todo.update(req.body, {
                 where: {
                     id: req.body.id,
                 }
