@@ -42,7 +42,7 @@ class TodoController {
     }
 
     async removeTodoById(req, res, next) {
-        const { id } = req.body;
+        const { id } = req.query;
 
         if (!id) {
             checkAndThrowErrorIfParamNotPassed(req.query[todoId], next, todoId);  
@@ -59,7 +59,7 @@ class TodoController {
     }
 
     async removeTodosByTodoLayoutId(req, res, next) {
-        const { todoLayoutId } = req.body;
+        const { todoLayoutId } = req.query;
 
         if (!todoLayoutId) {
             checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
