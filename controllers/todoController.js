@@ -4,7 +4,24 @@ const { Todo } = require('../models/models');
 const ApiError = require('../error/ApiError');
 class TodoController {
     async getTodoByLayoutId(req, res, next) {
-    checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
+        const { todoLayoutId } = req.query;
+
+        checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
+
+        try {
+            const todos = await Todo.findAll({
+                where: {
+                    todoLayoutId,
+                }
+            })
+
+            res.json(todos)
+        } catch(e) {
+            return next(ApiError.badRequest(`Can not get todos ${e}`))
+        }
+        
+        res.json()
+
     }
 
     async addTodo(req, res, next) {
