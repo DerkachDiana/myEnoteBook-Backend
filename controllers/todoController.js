@@ -6,8 +6,6 @@ class TodoController {
     async getTodoByLayoutId(req, res, next) {
         const { todoLayoutId } = req.query;
 
-        checkAndThrowErrorIfParamNotPassed(req.query[todoLayoutId], next, todoLayoutId);
-
         try {
             const todos = await Todo.findAll({
                 where: {
