@@ -85,9 +85,9 @@ class todoLayoutController {
         }
 
         try {
-            const todoLayoutCreatedStatus = await TodoLayout.create(todoLayout)
+            const newTodoLayout = await TodoLayout.create(todoLayout)
 
-            res.json(todoLayoutCreatedStatus)
+            res.json(newTodoLayout)
         } catch(e) {
             return next(ApiError.badRequest(`Can not create todoLayout ${e}`))
         }
