@@ -82,6 +82,23 @@ class todoCategoryController {
         }
     }
 
+    async getChosenCategoryByUserId(req, res, next) {
+        const { userId } = req.query;
+
+        try {
+            const chosenCategory = await TodoCategory.findOne({
+                where: {
+                    userId: userId,
+                    isChosen: true,
+                }
+            })
+
+            res.json(chosenCategory);
+        } catch(error) {
+            next(ApiError.badRequest('Can not findOne chosenCategoryByUserId'));
+        }
+    }
+
     async removeTodoCategoryById(req, res, next) {
         const { categoryId } = req.query
 
