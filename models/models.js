@@ -27,7 +27,6 @@ const Cover = sequelize.define('cover', {
 const TodoCategory = sequelize.define('todo_category', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.STRING, unique: true },
-    isChosen: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: false },
 });
 
 User.hasMany(TodoCategory);
