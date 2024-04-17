@@ -15,7 +15,7 @@ class TodoController {
 
             res.json(todos)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not get todos ${e}`))
+            return next(ApiError.BadRequest(`Can not get todos ${e}`))
         }
         
         res.json()
@@ -33,7 +33,7 @@ class TodoController {
 
             return res.json(todo)
         } catch(e) {
-            return next(ApiError.badRequest('Can not create todo', e))
+            return next(ApiError.BadRequest('Can not create todo', e))
         }
     }
 
@@ -52,7 +52,7 @@ class TodoController {
 
             res.json(todo)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not update todo ${e}`))
+            return next(ApiError.BadRequest(`Can not update todo ${e}`))
         }
     }
 

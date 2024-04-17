@@ -13,7 +13,7 @@ class UserService {
         })
 
         if (candidate) {
-            ApiError.BadRequest('User with this nickname exists ' + nickname)
+            throw ApiError.BadRequest('User with this nickname exists ' + nickname)
         }
 
         const hashPassword = await bcrypt.hash(password, 3)
