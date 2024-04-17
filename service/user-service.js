@@ -2,6 +2,7 @@ const { User } = require('../models/models.js')
 const bcrypt = require('bcrypt')
 const tokenService = require('./token-service')
 const UserDto = require('../dtos/user-dtos')
+const ApiError = require('../error/ApiError')
 
 class UserService {
     async registration(nickname, password) {
@@ -12,7 +13,7 @@ class UserService {
         })
 
         if (candidate) {
-            throw new Error('User with this nickname exists ' + nickname)
+            ApiError.BadRequest('User with this nickname exists ' + nickname)
         }
 
         const hashPassword = await bcrypt.hash(password, 3)
