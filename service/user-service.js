@@ -92,6 +92,13 @@ class UserService {
             user: userDto,
         }
     }
+
+    async getAllUsers() {
+        const users = await User.findAll();
+
+        return users;
+       
+    }
 }
 
 module.exports = new UserService()
