@@ -1,6 +1,8 @@
 const checkAndThrowErrorIfParamNotPassed = require('../error/utils');
 const { Cover } = require('../models/models');
-const CONSTANTS = require('./constants')
+const CONSTANTS = require('./constants');
+const ApiError = require('../error/ApiError');
+
 class CoverController {
     async getCoverById(req, res, next) {
         const { coverId } =req.query;
