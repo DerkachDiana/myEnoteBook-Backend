@@ -22,7 +22,7 @@ class todoLayoutController {
 
             res.json(todoLayouts)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not get todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not get todoLayout ${e}`))
         }
        
     }
@@ -45,7 +45,7 @@ class todoLayoutController {
 
             res.json(todoLayouts)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not find todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not find todoLayout ${e}`))
         }
 
     }
@@ -67,7 +67,7 @@ class todoLayoutController {
 
             res.json(todoLayout);
         } catch(e) {
-            return next(ApiError.badRequest(`Can not find todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not find todoLayout ${e}`))
         }
         
     }
@@ -89,7 +89,7 @@ class todoLayoutController {
 
             res.json(newTodoLayout)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not create todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not create todoLayout ${e}`))
         }
 
     }
@@ -114,7 +114,7 @@ class todoLayoutController {
 
             res.json(todoLayoutUpdateStatus)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not update todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not update todoLayout ${e}`))
         }
 
     }
@@ -137,7 +137,7 @@ class todoLayoutController {
 
             res.json(removeLayoutStatus)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not remove todoLayout ${e}`))
+            return next(ApiError.BadRequest(`Can not remove todoLayout ${e}`))
         }
         
     }
@@ -160,7 +160,7 @@ class todoLayoutController {
 
             res.json(removeTodoLayoutStatus)
         } catch(e) {
-            return next(ApiError.badRequest(`Can not remove todoLayouts ${e}`))
+            return next(ApiError.BadRequest(`Can not remove todoLayouts ${e}`))
         }
         
     }

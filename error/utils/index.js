@@ -6,7 +6,7 @@ const checkAndThrowErrorIfParamNotPassed = (param, next, paramName = 'param') =>
     : param;
 
     if (!checkIfEmpty) {
-        return next(ApiError.badRequest(`${paramName} not passed`))
+        return next(ApiError.BadRequest(`${paramName} not passed`))
     }
 }
 
