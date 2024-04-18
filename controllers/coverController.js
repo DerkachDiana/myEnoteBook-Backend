@@ -53,7 +53,7 @@ class CoverController {
     async getCovers(req, res, next) {
         try {
             const covers = await Cover.findAll()
-
+            
             res.json(covers);
         } catch (e) {
             return next(ApiError.badRequest('Can not get covers'))
