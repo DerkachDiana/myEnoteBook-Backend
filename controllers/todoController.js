@@ -17,9 +17,6 @@ class TodoController {
         } catch(e) {
             return next(ApiError.badRequest(`Can not get todos ${e}`))
         }
-        
-        res.json()
-
     }
 
     async addTodo(req, res, next) {
