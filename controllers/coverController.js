@@ -20,7 +20,7 @@ class CoverController {
 
             res.json(cover);
         } catch(e) {
-            return next(ApiError.BadRequest('Can not get cover'))
+            return next(ApiError.badRequest('Can not get cover'))
         }
         
     }
@@ -43,7 +43,7 @@ class CoverController {
 
             res.json(cover.color);
         } catch(e) {
-            return next(ApiError.BadRequest('Can not get cover'))
+            return next(ApiError.badRequest('Can not get cover'))
         }
         
     }
@@ -54,7 +54,7 @@ class CoverController {
 
             res.json(covers);
         } catch (e) {
-            return next(ApiError.BadRequest('Can not get covers'))
+            return next(ApiError.badRequest('Can not get covers'))
         }
     }
 }

@@ -21,7 +21,7 @@ class todoCategoryController {
 
             return res.json(todoCategories)
         } catch(e) {
-            return next(ApiError.BadRequest('Can not get todoCategoriesByUser'))
+            return next(ApiError.badRequest('Can not get todoCategoriesByUser'))
         }
        
     }
@@ -44,7 +44,7 @@ class todoCategoryController {
 
             return res.json(todoCategory)
         } catch(e) {
-            return next(ApiError.BadRequest('Can not get todoCategory'))
+            return next(ApiError.badRequest('Can not get todoCategory'))
         }
     }
 
@@ -62,7 +62,7 @@ class todoCategoryController {
 
             return res.json(todoCategoryCreatedStatus)
         } catch(e) {
-            return next(ApiError.BadRequest('Can not create todoCategory'))
+            return next(ApiError.badRequest('Can not create todoCategory'))
         }
     }
 
@@ -78,7 +78,7 @@ class todoCategoryController {
 
             res.json(todoCategory);
         } catch(e) {
-            next(ApiError.BadRequest('Can not update todoCategory'))
+            next(ApiError.badRequest('Can not update todoCategory'))
         }
     }
 
@@ -95,7 +95,7 @@ class todoCategoryController {
 
             res.json(chosenCategory);
         } catch(error) {
-            next(ApiError.BadRequest('Can not findOne chosenCategoryByUserId'));
+            next(ApiError.badRequest('Can not findOne chosenCategoryByUserId'));
         }
     }
 
@@ -117,7 +117,7 @@ class todoCategoryController {
 
             res.json(removeTodoCategoryStatus);
         } catch(e) {
-            next(ApiError.BadRequest('Can not delete todoCategory'))
+            next(ApiError.badRequest('Can not delete todoCategory'))
         }
     }
 }
